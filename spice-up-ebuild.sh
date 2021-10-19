@@ -23,8 +23,9 @@ fi
 
 echo -e "\t{"
 echo -e "\t\t\"version\": \"${branch}.${PATCH_VERSION}\","
-echo -e "\t\t\"gentoo_patchset\": \"${K_GENPATCHES_VER}\","
-echo -e "\t\t\"ps3_patchset\": \"${PS3_COMMIT_ID}\","
+echo -e "\t\t\"gentooPatchSet\": \"${K_GENPATCHES_VER}\","
+echo -e "\t\t\"ps3PatchSet\": \"${PS3_COMMIT_ID}\","
+echo -e "\t\t\"presumedFilename\": \"my-linux-kernel-${branch}.${PATCH_VERSION}.ebuild\","
 echo -e "\t\t\"possible\": ${BRANCH_STATUS}"
 echo -e "\t}"
 

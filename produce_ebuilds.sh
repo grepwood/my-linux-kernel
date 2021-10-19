@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
+set -euo pipefail
+branches=($(./get-lts-kernels.py))
 
-branches=$(./get-lts-kernels.py)
-
-for branch in ${branches[@]}; do
-	branch=${branch} ./spice-up-ebuild.sh
+echo '['
+for((counter=0; counter < ${#branches[@]}; counter++)); do
+	branch=${branches[${counter}]} ./spice-up-ebuild.sh
+	if [ $((${counter} + 1)) -ne ${#branches[@]} ]; then
+		echo -e '\t,'
+	fi
 done
+echo ']'
